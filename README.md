@@ -1,4 +1,18 @@
-Hello
-Read me to come!!
+# Landing Page
 
-This is a new repo and test for local websites etc
+### This is a simple project skeleton for building a Landing/Login Page for Websites/Web Apps.
+
+This is work in process.
+See TO-DO list for scope and features.
+
+---
+
+### *TO-DO Breakdown*
+
+- Password Login Fields
+    - UserName
+    - Password
+- Backend DB Implementing with Encyrption etc
+- Process Animation/Feedback
+- KeyBased Login ?
+- MFA ?
