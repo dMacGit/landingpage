@@ -1,11 +1,34 @@
 <!DOCTYPE html>
-<head>
-    <link rel="stylesheet" href=".static/css/style.css">
-</head>
-<section>
-    <article>
-        <header>
-            <h2>landing Page</h2>
-        </header>
-    </article>
-</section>
+<html>
+    <head>
+        <link rel="stylesheet" href=".static/css/style.css">
+    </head>
+    <body>
+        <main>
+            <section>
+                <header>
+                    <h2>landing Page</h2>
+                </header>
+                <article>
+                    <div class="login-Panel">
+                        <div class="login-Label">
+
+                        </div>
+                        <div class="login-field">
+                            <div class="user-Name">
+                                <label for="name">User Name</label>
+                                <input type="text" id="name" name="name" required
+       minlength="6" maxlength="32" size="20" placeholder="UserNameHere">
+                            </div>
+                            <div class="user-Password">
+                                <label for="password">Password</label>
+                                <input type="password" id="password" name="password" required
+       minlength="12" maxlength="32" size="20" placeholder="YourPassword">
+                            </div>
+                        </div>
+                    </div>                   
+                </article>
+            </section>
+        </main>
+    </body>
+</html>
