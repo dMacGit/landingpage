@@ -3,4 +3,44 @@ body {
     width: auto;
     height: auto;
     background-image: url("../img/trianglify.png");
+    background-size: cover;
+}
+
+section {
+    width: 30%;
+    height: 220px;
+    
+    margin: auto;
+    margin-top: 20%;
+
+    background-color: azure;
+    border-radius: 1em;
+    border: 2px solid azure;
+}
+
+section header {
+    margin-top: 1.1em;
+    margin-bottom: 1.1em;
+    text-align: center;
+}
+section header h2{
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.login-Panel {
+    text-align: center;
+}
+
+.field-element {
+    margin-bottom: 1em;
+}
+
+.login-button {
+    border: 3px solid lightgreen;
+    border-radius: .5em;
+    background-color: green;
+    width: 120px;
+    height: 40px;
+    color: whitesmoke
 }
