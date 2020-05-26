@@ -1,5 +1,6 @@
 create_Login_Listener = function () {
     var login_Button = document.getElementById("login-button");
+    var create_Button = document.getElementById("create-button");
     var show_Button = document.getElementById("show-button");
 
     login_Button.addEventListener("click", function (e) {
@@ -9,10 +10,40 @@ create_Login_Listener = function () {
             let uname = document.querySelector("#user-Name-Input").value;
             let upass = document.querySelector("#user-Password-Input").value;
             console.log("User Name",uname," Password",upass);
-            //name_validation(uname);
-            password_validation(upass);
+            if (name_validation(uname) && password_validation(upass))
+            {
+                console.log("Username Passed Validation");
+                console.log("Password Passed Validation");
+                checkUser(uname,upass);
+            }
+            else {
+                console.log("Username & Password Failed Validation");
+            }
+            
         }
         
+    });
+
+    create_Button.addEventListener("click", function (e){
+        if (e.target.id=="create-button")
+        {
+            //Some action
+            console.log("Create User Button Pressed");
+
+            let uname = document.querySelector("#user-Name-Input").value;
+            let upass = document.querySelector("#user-Password-Input").value;
+            console.log("User Name",uname," Password",upass);
+            if (name_validation(uname) && password_validation(upass))
+            {
+                console.log("Selected New Username, Passed Validation");
+                console.log("Secected New Password, Passed Validation");
+                createNewUser(uname,upass);
+            }
+            else {
+                console.log("Selected New Username & Password Failed Validation");
+            }
+        }
+
     });
     show_Button.addEventListener("click", function (e) {
         if (e.target.id == "show-button")
@@ -47,17 +78,20 @@ name_validation = function (name) {
 
     if (unvalidated.length >= minLength ) {
         for (index=0; index<unvalidated.length; index++) {
-            let currentCharacter = unvalidated.charAt[index];
-            if (Number.isInteger(currentCharacter)){
+            let currentCharacter = unvalidated[index];
+            if (!isNaN(currentCharacter)){
                 //Is a number
-                currentNums += 1;
+                console.log(currentCharacter," is a Number!");
+                currentNums = currentNums + 1;
             }
             else if (currentCharacter == currentCharacter.toUpperCase()) {
                 //Is uppercase
-                currentUppers += 1;
+                console.log(currentCharacter," is Uppercase!");
+                currentUppers = currentUppers + 1;
             }
             else {
-                //Unknown
+                //Lowercase Character
+                console.log("Lowercase Character",currentCharacter);
             } 
 
             
@@ -66,6 +100,9 @@ name_validation = function (name) {
             validated = true;
             console.log(currentNums,">=",minNumber," & ",currentUppers,">=",minUpperCase," SO VALIDATED INPUT!");
             return validated;
+        }
+        else {
+            console.log(currentNums,">=",minNumber," & ",currentUppers,">=",minUpperCase," NOT VALIDATED INPUT!");
         }
     }
     else {
@@ -88,25 +125,33 @@ password_validation = function(password)
 
     if (unvalidated.length >= minLength ) {
         for (index=0; index<unvalidated.length; index++) {
-            let currentCharacter = unvalidated.charAt[index];
-            if (Number.isInteger(currentCharacter)){
+            let currentCharacter = unvalidated[index];
+            //var numberCheck = String.isInteger(currentCharacter);
+            if (!isNaN(currentCharacter)){
                 //Is a number
-                currentNums += 1;
+                console.log(currentCharacter," is a Number!");
+                currentNums = currentNums + 1;
             }
             else if (currentCharacter == currentCharacter.toUpperCase()) {
                 //Is uppercase
-                currentUppers += 1;
+                console.log(currentCharacter," is Uppercase!");
+                currentUppers = currentUppers + 1;
             }
             else {
-                //Unknown
+                //Lowercase Character
+                console.log("Lowercase Character",currentCharacter);
             } 
 
             
         }
+
         if ( (currentNums >= minNumber) && (currentUppers >= minUpperCase) ){
             validated = true;
             console.log(currentNums,">=",minNumber," & ",currentUppers,">=",minUpperCase," SO VALIDATED INPUT!");
             return validated;
+        }
+        else {
+            console.log(currentNums,">=",minNumber," & ",currentUppers,">=",minUpperCase," NOT VALIDATED INPUT!");
         }
     }
     else {
