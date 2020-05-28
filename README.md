@@ -13,10 +13,8 @@ Below Example Image of Look & Layout of Login page
 
 ### *TO-DO Breakdown*
 
-- Password Login Fields
-    - UserName
-    - Password
-- Backend DB Implementing with Encyrption etc
+- ~~Password Login Fields~~
+- ~~Backend DB Implementing~~ with Encyrption etc
 - Process Animation/Feedback
 - KeyBased Login ?
 - MFA ?
