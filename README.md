@@ -7,7 +7,7 @@ See TO-DO list for scope and features.
 
 Below Example Image of Look & Layout of Login page
 
-![Example of Login Page](/Screenshots/Screenshot1.png "Example Screenshot")
+![Example of Login Page](Screenshots/Screenshot1.png "Example Screenshot")
 
 ---
 
