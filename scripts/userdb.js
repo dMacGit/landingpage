@@ -25,6 +25,7 @@ createNewUser = function (userName, userPass) {
 checkUser = function (name, password) {
     const checkName = name;
     const checkPass = password;
+    let success = false;
     var transaction = db.transaction(["users"], "readwrite");
     transaction.oncomplete = function (event) {
         console.log("CheckUser() [Transaction] Success!");
@@ -44,15 +45,21 @@ checkUser = function (name, password) {
             if (dbName == checkName) 
             {
                 if (dbPass == checkPass) {
-                    console.log("User Found and Login Matches!");
+                    console.log("User Found & Login Matches!");
+                    success = true;
                 }
             }
+            else {
+                console.log("User NOT Found in DB");
+                success = false;
+            }   
             
         }
 
         console.log("CheckUser() [Request] Success!");
+        return success;
     };
-
+    
 };
 
 window.onload = function () {

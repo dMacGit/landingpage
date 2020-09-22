@@ -2,7 +2,9 @@ create_Login_Listener = function () {
     var login_Button = document.getElementById("login-button");
     var create_Button = document.getElementById("create-button");
     var show_Button = document.getElementById("show-button");
-
+    var passwordVisible = false;
+    const visible_image = "/static/img/edited_visible.png";
+    const non_visible_image = "/static/img/visibility-off.png";
     login_Button.addEventListener("click", function (e) {
         if (e.target.id == "login-button")
         {
@@ -14,7 +16,14 @@ create_Login_Listener = function () {
             {
                 console.log("Username Passed Validation");
                 console.log("Password Passed Validation");
-                checkUser(uname,upass);
+                if (!checkUser(uname,upass)){
+                    console.log("Username NOT found in DB!");
+                }
+                else
+                {
+                    //Continue to login to site/page
+                    console.log("USER NOW LOGGED IN as",uname);
+                }
             }
             else {
                 console.log("Username & Password Failed Validation");
@@ -37,7 +46,13 @@ create_Login_Listener = function () {
             {
                 console.log("Selected New Username, Passed Validation");
                 console.log("Secected New Password, Passed Validation");
-                createNewUser(uname,upass);
+                if (!checkUser(uname,upass)) {
+                    createNewUser(uname,upass);
+                }
+                else {
+                    console.log("Username already Created");
+                }
+                
             }
             else {
                 console.log("Selected New Username & Password Failed Validation");
@@ -49,6 +64,15 @@ create_Login_Listener = function () {
         if (e.target.id == "show-button")
         {
             let pass_input = document.querySelector("#user-Password-Input");
+            let pass_button = document.querySelector("#show-button");
+            if (passwordVisible) {
+                pass_button.style.backgroundImage = "url('"+visible_image+"')";
+                passwordVisible = false;
+            }
+            else {
+                pass_button.style.backgroundImage = "url('"+non_visible_image+"')";
+                passwordVisible = true;
+            }
             if (pass_input.type == "password") {
                 pass_input.type = "text";
             }
@@ -63,7 +87,11 @@ create_Login_Listener = function () {
         
     });
     
+    
+
 };
+
+
 
 name_validation = function (name) {
     let unvalidated = name.toString();

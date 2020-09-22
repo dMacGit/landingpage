@@ -32,8 +32,41 @@ section header h2{
     text-align: center;
 }
 
+label[for=name] {
+    padding-right: 5%;
+}
+label[for=password] {
+    padding-right: 5%;
+}
+
+#user-Name-Input {
+    width: auto;
+    min-width: 100px;
+    max-width: 200px;
+}
+
+#user-Password-Input {
+    width: auto;
+    min-width: 100px;
+    max-width: 200px;
+}
+
+#show-button {
+    width: 40px;
+    height: 35px;
+    margin-top: -2px;
+    vertical-align: middle;
+    background-image: url('/static/img/edited_visible.png');
+    background-size: contain;
+    background-color: transparent;
+    border-color: transparent;
+    background-repeat: no-repeat;
+}
+
 .field-element {
     margin-bottom: 1em;
+    padding-left: 5%;
+    padding-right: 5%;
 }
 
 .login-button {
