@@ -5,9 +5,15 @@
 This is work in process.
 See TO-DO list for scope and features.
 
-Below Example Image of Look & Layout of Login page
+### Below Example Image of Look & Layout of Login page
 
-![Example of Login Page](Screenshots/Screenshot1.png "Example Screenshot")
+First screenshot shows default look, with hidden password.
+
+![Example of Login Page. Hidden password](Screenshots/Screenshot-01.png "Example Screenshot hidden password")
+
+Second screenshot shows "Show password" button toggled, with visible password.
+
+![Example of Login Page. Visible password](Screenshots/Screenshot-02.png "Example Screenshot with visible password")
 
 ---
 
