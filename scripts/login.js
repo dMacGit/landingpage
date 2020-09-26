@@ -3,8 +3,8 @@ create_Login_Listener = function () {
     var create_Button = document.getElementById("create-button");
     var show_Button = document.getElementById("show-button");
     var passwordVisible = false;
-    const visible_image = "/static/img/edited_visible.png";
-    const non_visible_image = "/static/img/visibility-off.png";
+    const visible_image = "./static/img/edited_visible.png";
+    const non_visible_image = "./static/img/visibility-off.png";
     login_Button.addEventListener("click", function (e) {
         if (e.target.id == "login-button")
         {
